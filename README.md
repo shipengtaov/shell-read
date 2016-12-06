@@ -9,8 +9,8 @@
 
 发布一条 status
 
-	$ swrite 我的第一条 status
-	
+	$ swrite "我的第一条 status"
+
 	# 打印帮助
 	$ swrite -h
 
