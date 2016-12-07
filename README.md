@@ -22,6 +22,11 @@
 
 安装后会有 $HOME/.shell_read.conf 配置文件
 
+	[settings]
+	url : <read-and-write-url>
+	nickname: anonymous
+
+
 卸载
 ----
 
