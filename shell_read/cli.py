@@ -13,7 +13,7 @@ from colorama import (
     colorama_text, Fore, Style
 )
 
-DEFAULT_URL = "http://localhost:8000/api/post/"
+DEFAULT_URL = "http://shell-read.leonornot.org/api/post/"
 DEFAULT_NICKNAME = "anonymous"
 
 COLUMN_STYLE = Fore.BLUE + Style.BRIGHT
@@ -41,6 +41,14 @@ def read(category=None):
         return
 
     post = data['data']
+    if not post:
+        print("""
+No data. How about to write your first post?
+Use:
+    %sswrite "your text"%s
+""" % (Fore.GREEN, Fore.RESET))
+        return
+
     with colorama_text():
         print("""%snickname:%s %s,
 %sdate:%s %s,
