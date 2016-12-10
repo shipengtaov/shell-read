@@ -40,17 +40,16 @@ def read(category=None):
             print("%serror:%s %s" % (Fore.RED, Fore.RESET, data.get('msg')))
         return
 
-    post = data['data']
-    if not post:
-        print("""
+    with colorama_text():
+        post = data['data']
+        if not post:
+            print("""
 No data. How about to write your first post?
 Use:
     %sswrite "your text"%s
 """ % (Fore.GREEN, Fore.RESET))
-        return
-
-    with colorama_text():
-        print("""%snickname:%s %s,
+        else:
+            print("""%snickname:%s %s,
 %sdate:%s %s,
 %scontent:%s %s
 """.strip() % (COLUMN_STYLE, RESET_COLUMN_STYLE, post['nickname'],
